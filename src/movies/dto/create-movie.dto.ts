@@ -6,6 +6,7 @@ import {
     IsString,
   } from 'class-validator';
 
+  //DTO for a Movie, fulfilling the stated requirements for each field
 export class CreateMovieDto {
   @IsString()
   @IsNotEmpty()

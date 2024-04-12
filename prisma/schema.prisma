@@ -13,7 +13,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Movie {
+model Movie { //will model data objects of the API,  maybe not optimal, db table primary key could be title perhaps
   id    Int @id @default(autoincrement())
   title   String  @unique
   description   String

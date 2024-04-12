@@ -7,8 +7,10 @@ import { ApiTags } from '@nestjs/swagger';
 
 @Controller('movies')
 @ApiTags('movies')
-export class MoviesController {
+export class MoviesController { //Connects to Service for Movie objects
   constructor(private readonly moviesService: MoviesService) {}
+
+  //CRUD Operations for Movies 
 
   @Post()
   create(@Body() createMovieDto: CreateMovieDto) {
@@ -34,6 +36,8 @@ export class MoviesController {
   remove(@Param('id', ParseIntPipe) id: number) {
     return this.moviesService.remove(id);
   }
+
+  //Search endpoints
 
   @Get()
   searchMoviesByTitle(@Query("title") title: string) {

@@ -1,7 +1,7 @@
 import { Movie} from '@prisma/client';
 import { ApiProperty } from '@nestjs/swagger';
 
-export class MovieEntity implements Movie {
+export class MovieEntity implements Movie { //Represents the Movie API entity
   @ApiProperty()
   id: number;
 

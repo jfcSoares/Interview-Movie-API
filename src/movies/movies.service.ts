@@ -4,7 +4,7 @@ import { UpdateMovieDto } from './dto/update-movie.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
-export class MoviesService {
+export class MoviesService { //Implements all Movie-related operations, by connecting to the Postgres db
 
   constructor(private prisma: PrismaService) {}
 
