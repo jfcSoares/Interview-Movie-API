@@ -17,7 +17,7 @@ export class MoviesService {
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} movie`;
+    return this.prisma.movie.findMany({ where: {id: id} });
   }
 
   update(id: number, updateMovieDto: UpdateMovieDto) {
@@ -30,4 +30,20 @@ export class MoviesService {
   remove(id: number) {
     return this.prisma.movie.delete({ where: { id } });
   }
+
+  findByTitle(movieTitle: string) {
+    return this.prisma.movie.findFirst({ where: { title: movieTitle} });
+  }
+
+  findByGenre(reqGenre: string) {
+    return this.prisma.movie.findMany({
+      where: {
+        genre: {
+          has: reqGenre
+        }
+      }
+    })
+      
+  }
 }
+
