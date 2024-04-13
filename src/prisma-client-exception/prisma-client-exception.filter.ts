@@ -4,7 +4,7 @@ import { Prisma } from '@prisma/client';
 import { Response } from 'express';
 
 @Catch(Prisma.PrismaClientKnownRequestError)
-export class PrismaClientExceptionFilter extends BaseExceptionFilter {
+export class PrismaClientExceptionFilter extends BaseExceptionFilter { //Error Handling class, filters exceptions caught by NestJS
   catch(exception: Prisma.PrismaClientKnownRequestError, host: ArgumentsHost) {
     console.error(exception.message);
     const ctx = host.switchToHttp();

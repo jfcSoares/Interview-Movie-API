@@ -9,7 +9,7 @@ async function bootstrap() {
     logger: ['error', 'warn'],
   });
 
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe()); //Input Validation module
 
   const config = new DocumentBuilder()
     .setTitle('Movie API')

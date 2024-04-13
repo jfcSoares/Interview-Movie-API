@@ -45,7 +45,7 @@ export class GenresService {
       }
 
       movie.genre = genres //replace old value
-      movieServ.update(movie.id, movie)
+      movieServ.update(movie.id, movie) //update movie info on the database
     });
 
     return this.prisma.genre.delete({ where: { name } });

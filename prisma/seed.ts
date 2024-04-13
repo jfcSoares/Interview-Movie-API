@@ -3,8 +3,9 @@ import { PrismaClient } from '@prisma/client';
 // initialize Prisma Client
 const prisma = new PrismaClient();
 
+//Small script to populate the database
 async function main() {
-  // create two dummy articles
+  // create two dummy movies
   const post1 = await prisma.movie.upsert({
     where: { title: 'Poor Things' },
     update: {},
@@ -31,6 +32,7 @@ async function main() {
 
   console.log({ post1, post2 });
 
+  //create two dummy genres
   const post3 = await prisma.genre.upsert({
     where: { name: "Action" },
     update: {},
